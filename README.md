@@ -1,104 +1,87 @@
-# Enterprise IT & Security Homelab
+# Enterprise Security, Automation & AI Lab
 
-A hands-on IT and cybersecurity homelab exploring Windows and Linux administration, networking, virtualization, troubleshooting, monitoring, automation, and security operations.
+A hands-on lab focused on security investigation, detection, workflow automation, and AI-assisted operations within an enterprise-style environment.
 
 ## Purpose
 
-This project is to be used as my learning environment for building and maintaining an enterprise-style IT infrastructure. The goal is to strengthen software and systems administration skills through hands-on problem-solving and experimentation, while progressively developing skills in security monitoring, detection, incident response, and automation.
+This lab is a practical environment for building and applying skills in security monitoring, investigation, automation, and AI-enabled workflows.
 
-The lab is designed to mirror technologies and workflows commonly used in enterprise IT and security operations.
+The goal is to better understand how enterprise systems generate security-relevant data, how that data can be investigated and analyzed, and how repetitive security and operational processes can be improved through automation.
 
-## Current Environment
+The lab also provides the Windows, Active Directory, networking, and systems administration foundation needed to understand the systems and activity being monitored.
 
-- Hyper-V virtualization
-- Windows Server
-- Windows 10/11 Endpoints
+## Areas of Focus
+
+### Security Investigation & KQL
+
+- Kusto Query Language (KQL)
+- Security event analysis
+- Windows and identity telemetry
+- Threat hunting
+- Alert investigation and triage
+- Detection development
+- Microsoft security platforms
+
+### Automation & Workflow Engineering
+
+- Microsoft Power Automate
+- Microsoft Power Apps
+- PowerShell
+- API integrations
+- Automated enrichment and data processing
+- Human-in-the-loop workflows
+- Operational process improvement
+
+### AI & Agent-Based Solutions
+
+- AI-assisted investigation
+- Security workflow automation
+- Agent-based solutions
+- Data analysis and summarization
+- Human validation and approval
+- Applying AI to security and operational workflows
+
+### Enterprise Infrastructure
+
+The lab includes the supporting infrastructure needed to generate realistic activity and telemetry, including:
+
 - Active Directory Domain Services
-- DNS
-- Windows 11 endpoints
-- Kali Linux
-- Enterprise-style networking
+- Windows Server
+- Windows endpoints
+- DNS and networking
+- Identity and access management
+- Group Policy
+- File and resource permissions
+- Windows event logging
+- Virtualization with Hyper-V
 
-## Project Roadmap
+Infrastructure administration and troubleshooting are used throughout the lab to build, maintain, and expand the environment as needed.
 
-### IT & Systems Administration
+## Projects
 
-- [ ] Windows administration fundamentals
-- [ ] Linux administration fundamentals
-- [ ] Active Directory administration
-- [ ] Users, groups, and organizational units
-- [ ] Group Policy
-- [ ] File and share permissions
-- [ ] Windows services and troubleshooting
-- [ ] PowerShell fundamentals
+Projects will focus on applying these technologies to practical security and operational problems.
 
-### Networking & Infrastructure
+Project documentation will generally include:
 
-- [ ] TCP/IP fundamentals
-- [ ] DNS
-- [ ] DHCP
-- [ ] Network troubleshooting
-- [ ] Windows Firewall
-- [ ] Network services and protocols
-- [ ] Hyper-V virtualization
-- [ ] Enterprise-style network design
+- Problem or objective
+- Environment and architecture
+- Implementation
+- Investigation or development process
+- Challenges and troubleshooting
+- Results
+- Lessons learned
+- Potential improvements
 
-### Monitoring & Logging
+### Current Projects
 
-- [ ] Windows Event Logs
-- [ ] Advanced Windows logging
-- [ ] Sysmon
-- [ ] PowerShell logging
-- [ ] Centralized log collection
-- [ ] Log analysis and investigation
-- [ ] Microsoft security telemetry
+Projects will be added here as they are completed.
 
-### Microsoft Security
+## Lab Environment
 
-- [ ] Microsoft Defender for Endpoint
-- [ ] Microsoft Defender XDR
-- [ ] Microsoft Defender for Identity
-- [ ] Microsoft Defender for Office 365
-- [ ] Microsoft Sentinel
-- [ ] Microsoft security alerts and incidents
-- [ ] Advanced Hunting / KQL
-- [ ] Detection rules and analytics
-- [ ] Incident investigation and response
+Current environment:
 
-### Security Operations
-
-- [ ] Network reconnaissance
-- [ ] Vulnerability assessment
-- [ ] Controlled attack simulations
-- [ ] Active Directory security
-- [ ] Credential security
-- [ ] Endpoint security
-- [ ] Detection engineering
-- [ ] Incident response
-- [ ] Threat hunting
-
-### Automation
-
-- [ ] PowerShell automation
-- [ ] Python scripting
-- [ ] Automated system administration tasks
-- [ ] Log processing and analysis
-- [ ] Security automation
-- [ ] Automated detection and response workflows
-- [ ] API integration
-
-## Projects & Labs
-
-This section will contain individual hands-on projects, experiments, and troubleshooting scenarios completed within the lab.
-
-## Troubleshooting & Lessons Learned
-
-This section documents significant problems encountered during lab development, the investigation process, solutions, and lessons learned.
-
-## Documentation
-
-Documentation will include network diagrams, system configurations, troubleshooting notes, scripts, investigation reports, and other relevant artifacts.
-
-## Future Goals
-
-The long-term goal is to evolve the lab from a basic IT environment into a small enterprise-style security operations environment capable of generating realistic telemetry for monitoring, detection, threat hunting, and incident response.
+- Windows 11 Hyper-V host
+- Windows Server Active Directory domain controller
+- Windows 11 domain-joined endpoint
+- Linux security workstation
+- Isolated lab users, groups, permissions, and enterprise-style resources
