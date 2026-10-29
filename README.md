@@ -74,7 +74,24 @@ Project documentation will generally include:
 
 ### Current Projects
 
-Projects will be added here as they are completed.
+
+## Projects
+
+### 001 — Windows Authentication Investigation Using KQL
+
+**Focus:** Security monitoring, Windows Event Logs, KQL, Azure Log Analytics, and troubleshooting.
+
+Investigated controlled Windows authentication failures in an Active Directory homelab. Identified incorrect-password and expired-password events, resolved a workstation telemetry coverage gap, and used KQL to analyze centralized security logs.
+
+**Key skills demonstrated:**
+- Windows Security Event ID 4625 analysis
+- KQL investigation and field extraction
+- Azure Arc and Azure Monitor Agent configuration
+- Log Analytics telemetry validation
+- PowerShell event log verification
+- Troubleshooting and evidence documentation
+
+[**View Project 001 — Full Investigation**](projects/001-windows-authentication-investigation/README.md)
 
 ## Lab Environment
 
