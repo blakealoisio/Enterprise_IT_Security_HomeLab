@@ -51,6 +51,42 @@ To address this gap, I:
 4. Verified agent connectivity using KQL heartbeat queries.
 5. Confirmed workstation authentication events were arriving in Log Analytics.
 
+
+## Troubleshooting and Resolution
+
+### Issue 1: Missing Workstation Authentication Events
+
+**Problem:** Failed authentication events were visible in the local Windows Security log on W11-PC01 but were initially missing from Azure Log Analytics.
+
+**Investigation:**
+- Verified that Event ID 4625 existed locally on W11-PC01.
+- Compared the events available from the domain controller and workstation.
+- Identified a gap in centralized endpoint monitoring.
+
+**Resolution:**
+- Onboarded W11-PC01 to Azure Arc.
+- Installed Azure Monitor Agent (AMA).
+- Associated the workstation with the existing Data Collection Rule (DCR).
+- Confirmed that workstation authentication events were reaching Log Analytics.
+
+**Lesson Learned:** Monitoring the domain controller alone did not provide complete visibility into workstation authentication failures.
+
+### Issue 2: Delayed Security Event Ingestion
+
+**Problem:** Security events did not immediately appear in Log Analytics after configuring the workstation.
+
+**Investigation:**
+- Verified Azure Arc connectivity and AMA installation.
+- Checked running agent processes.
+- Confirmed DCR association.
+- Used KQL heartbeat and event queries to check data collection.
+
+**Resolution:**
+- Continued monitoring agent connectivity and ingestion.
+- Verified that workstation Security events eventually appeared in the `Event` table.
+
+**Lesson Learned:** A healthy agent heartbeat does not necessarily mean every expected security event is being collected.
+
 ## KQL Investigation
 
 KQL was used to identify failed authentication events and extract the target username from XML-based event data.
