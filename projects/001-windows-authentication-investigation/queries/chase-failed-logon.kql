@@ -1,0 +1,11 @@
+// Project 001: Windows Authentication Investigation
+// Purpose: Identify failed Windows logon events (4625) on W11-PC01.
+// Extracts the target username from the event's XML data.
+// Note: The 4-hour lookback was used during the original investigation.
+
+Event
+| where TimeGenerated > ago(4h)
+| where EventID == 4625
+| where Computer startswith "W11-PC01"
+| extend AccountName = extract('TargetUserName">([^<]+)', 1, EventData)
+| project TimeGenerated, Computer, EventID, EventData, AccountName
