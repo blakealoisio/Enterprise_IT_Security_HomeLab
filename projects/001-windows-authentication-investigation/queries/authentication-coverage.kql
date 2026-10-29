@@ -1,0 +1,9 @@
+ // Project 001: Windows Authentication Investigation
+ // Purpose: Verify which computers are sending Windows authentication events.
+ // Groups events by computer and Event ID to identify monitoring coverage gaps.
+ // Note: The 4-hour lookback reflects the original investigation.
+
+Event
+| where TimeGenerated > ago(4h)
+| summarize Events = count(), LatestEvent = max(TimeGenerated) by Computer, EventID
+| sort by LatestEvent desc
