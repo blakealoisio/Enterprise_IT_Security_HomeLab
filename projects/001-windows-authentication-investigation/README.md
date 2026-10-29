@@ -119,12 +119,51 @@ The investigation demonstrated how to distinguish authentication failure causes,
 - KQL can extract useful fields from raw XML event data.
 - Security findings should be supported by actual event evidence.
 
+
 ## Evidence and Queries
 
-Supporting KQL queries and investigation screenshots will be added to the following directories:
+The following evidence was collected during the controlled Windows authentication investigation.
 
-- `queries/` — Saved KQL investigation queries
-- `evidence/` — Screenshots of Windows Security events and Azure Log Analytics results
+### 1. Incorrect Password Authentication Failure
+
+Windows Security Event ID 4625 recorded a failed interactive sign-in caused by an incorrect password.
+
+![Failed password authentication event](evidence/01-failed-password-event.png)
+
+### 2. Expired Password Authentication Failure
+
+A separate Event ID 4625 showed that the account's password had expired.
+
+![Expired password authentication event](evidence/02-expired-password-event.png)
+
+### 3. Failed Authentication Event in Azure Log Analytics
+
+The failed authentication event was identified in the centralized `Event` table using KQL.
+
+![Failed authentication event in Log Analytics](evidence/03-kql-failed-logon.png)
+
+### 4. KQL Account Investigation
+
+KQL was used to extract the target username from the event's XML data, identifying the account involved in the failed sign-in.
+
+![KQL account extraction results](evidence/04-kql-account-extraction.png)
+
+### 5. Authentication Telemetry Coverage
+
+After configuring monitoring for W11-PC01, KQL confirmed that security events were being collected from both the domain controller and workstation.
+
+![Authentication event coverage across both machines](evidence/05-authentication-coverage.png)
+
+### Investigation Queries
+
+- [Failed Logon Investigation (KQL)](queries/chase-failed-logon.kql)
+- [Authentication Event Coverage (KQL)](queries/authentication-coverage.kql)
+
+### PowerShell Validation
+
+- [Local Windows Security Event Verification (PowerShell)](scripts/verify-local-security-events.ps1)
+
+The PowerShell command was used to inspect authentication events locally, while KQL was used to validate centralized event collection and investigate the failed authentication activity.
 
 ## Future Improvements
 
